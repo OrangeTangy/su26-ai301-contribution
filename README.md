@@ -1,15 +1,17 @@
-# Contribution [#]: [Issue Title]
+# Contribution 1: Control API for AI-assisted comment resolution
 
-**Contribution Number:** [1 / 2 / 3]  
+**Contribution Number:** 1  
 **Student:** [Your Name]  
-**Issue:** [GitHub issue link]  
-**Status:** [Phase I / Phase II / Phase III / Phase IV] [In Progress / Complete]
+**Issue:** [mavaali/tippani #42](https://github.com/mavaali/tippani/issues/42)  
+**Status:** Phase I — Complete
 
 ---
 
 ## Why I Chose This Issue
 
-[1-2 paragraphs explaining why this issue interests you, how it matches your skills/learning goals, what you hope to learn]
+**The issue.** [tippani](https://github.com/mavaali/tippani) is a CLI that renders Azure DevOps pull-request markdown as a clean three-column review portal, but resolving review comments is entirely manual — you read a thread, type a reply, click resolve, and scroll to the next one. Issue #42 proposes a lightweight HTTP + Server-Sent-Events "control API" that lets an external tool (an LLM assistant, a script, or an IDE extension) drive tippani's UI — list comment threads, scroll to and highlight a thread, and stage a draft reply — while the human reviewer keeps final approval in the browser. It matters because it turns tippani into a shared visual layer between a reviewer and an AI assistant, cutting a 15-thread review from roughly 15 minutes to 3, without ever auto-posting on the user's behalf.
+
+**Why I chose it.** It's an uncontested `good first issue` / `P1` on an actively maintained repo, and it's plain Node/Express/JavaScript I can ramp on quickly. Most importantly the scope is bounded and buildable in slices: much of the proposal *extends* an existing server rather than starting from scratch — `/api/reply` and `/api/resolve` already exist, thread data is already serialized to the client, and the scroll-to-thread-and-highlight behavior is already implemented — so the genuinely new work (a `GET /sse` event channel, a draft-staging UI, and a few read-only endpoints) is something I can land as a reviewable MVP first and then extend. The AI-assisted-review angle also lines up with my interest in developer tooling.
 
 ---
 
