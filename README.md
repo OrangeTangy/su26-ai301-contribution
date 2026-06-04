@@ -1,7 +1,7 @@
 # Contribution 1: Control API for AI-assisted comment resolution
 
 **Contribution Number:** 1  
-**Student:** [Your Name]  
+**Student:** Tanay Anand 
 **Issue:** [mavaali/tippani #42](https://github.com/mavaali/tippani/issues/42)  
 **Status:** Phase I — Complete
 
